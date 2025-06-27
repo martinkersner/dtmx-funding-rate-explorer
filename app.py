@@ -172,7 +172,7 @@ fig = go.Figure()
 fig.add_trace(
     go.Scatter(
         x=df_to_display["Date"],
-        y=df_to_display["along_bshort"],
+        y=df_to_display["along_bshort"] * 100,
         mode="lines+markers",
         name=f"({exchange_a} long, {exchange_b} short) accumulated funding",
         line=dict(color="#1f77b4"),
@@ -182,7 +182,7 @@ fig.add_trace(
 fig.add_trace(
     go.Scatter(
         x=df_to_display["Date"],
-        y=df_to_display["blong_ashort"],
+        y=df_to_display["blong_ashort"] * 100,
         mode="lines+markers",
         name=f"({exchange_b} long, {exchange_a} short) accumulated funding",
         line=dict(color="#ff7f0e"),
@@ -194,7 +194,7 @@ fig.add_trace(
 fig.add_trace(
     go.Bar(
         x=df_to_display["Date"],
-        y=df_to_display["DailyFunding_a"],
+        y=df_to_display["DailyFunding_a"] * 100,
         name=f"({exchange_a}) daily funding",
         opacity=0.5,
         marker_color="#1f77b4",
@@ -203,7 +203,7 @@ fig.add_trace(
 fig.add_trace(
     go.Bar(
         x=df_to_display["Date"],
-        y=df_to_display["DailyFunding_b"],
+        y=df_to_display["DailyFunding_b"] * 100,
         name=f"({exchange_b}) daily funding",
         opacity=0.5,
         marker_color="#ff7f0e",
@@ -212,7 +212,7 @@ fig.add_trace(
 
 fig.update_layout(
     title=f"{asset}: {exchange_a} & {exchange_b}",
-    yaxis_title="Funding Rate",
+    yaxis_title="Funding Rate [%]",
     barmode="group",
     hovermode="x unified",
     height=600,
