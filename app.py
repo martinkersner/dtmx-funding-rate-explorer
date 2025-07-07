@@ -225,6 +225,7 @@ fig.update_layout(
         x=0.5,  # center horizontally
         xanchor="center",
         yanchor="bottom",
+        font=dict(color="white"),
     ),
     yaxis=dict(
         tickformat=".6f",
