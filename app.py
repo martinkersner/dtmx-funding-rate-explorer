@@ -64,6 +64,10 @@ st.markdown(
         color: white;  /* optional: set default text color to white */
     }
 
+   label {
+        color: white !important;
+    }
+
     /* Optional: style sidebar background */
     .css-1d391kg {  /* sidebar container */
         background-color: #111111;
