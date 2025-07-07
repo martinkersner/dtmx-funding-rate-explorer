@@ -215,7 +215,10 @@ fig.add_trace(
 )
 
 fig.update_layout(
-    title=f"{asset}: {exchange_a} & {exchange_b}",
+    title=dict(
+        text=f"{asset}: {exchange_a} & {exchange_b}",
+        font=dict(color="white")
+    ),
     yaxis_title="Funding Rate [%]",
     barmode="group",
     hovermode="x unified",
